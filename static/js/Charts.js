@@ -52,7 +52,7 @@ function buildMetadata(sample) {
 
   });
 }
-
+// Bar Chart
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
@@ -92,20 +92,30 @@ function buildCharts(sample) {
     };
 
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", bar_data, barLayout);
+    Plotly.newPlot("bar", barData, barLayout);
   });
 }
 
-// Bar and Bubble charts
+// Bubble chart
 // Create the buildCharts function.
 function buildCharts(sample) {
   // Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
+    // 3. Create a variable that holds the samples array. 
+    var samples= data.samples;
     
+    // 4. Create a variable that filters the samples for the object with the desired sample number.
+    var resultsarray= samples.filter(sampleobject => 
+      sampleobject.id == sample);
+  
+    //  5. Create a variable that holds the first sample in the array.
+    var result= resultsarray[0]
 
-    // Deliverable 1 Step 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot(); 
-
+    // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
+    var ids = result.otu_ids;
+    var labels = result.otu_labels;
+    var values = result.sample_values;
+   
     // 1. Create the trace for the bubble chart.
     var bubbleData = [
       {
@@ -129,35 +139,7 @@ function buildCharts(sample) {
   
 
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot(); 
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
   });
 }
 
-// Create the buildChart function.
-function buildCharts(sample) {
-  // Use d3.json to load the samples.json file 
-  d3.json("samples.json").then((data) => {
-    console.log(data);
-
-    function buildCharts(sample) {
-
-      // Use `d3.json` to fetch the sample data for the plots
-      d3.json("samples.json").then((data) => {
-        var samples= data.samples;
-        var resultsarray= samples.filter(sampleobject => 
-            sampleobject.id == sample);
-        var result= resultsarray[0]
-      
-        var ids = result.otu_ids;
-        var labels = result.otu_labels;
-        var values = result.sample_values;
-
-    // Use Plotly to plot the bar data and layout.
-    Plotly.newPlot();
-    
-    // Use Plotly to plot the bubble data and layout.
-    Plotly.newPlot();
-   
-    
-    // 4. Create the trace for the gauge chart.
-    var gaugeData = [

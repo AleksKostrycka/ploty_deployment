@@ -1,11 +1,4 @@
-// SELECT FIELDS & DIVS
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// FUNCTION #1 of 4
 function buildCharts(patientID) {
-
-  // READ & INTERPRET THE DATA
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   // Read in the JSON data
     d3.json("samples.json").then((data => {
@@ -123,7 +116,7 @@ function buildCharts(patientID) {
 };
 
 
-// FUNCTION #2 of 4
+
 function populateDemoInfo(patientID) {
 
     var demographicInfoBox = d3.select("#sample-metadata");
@@ -140,14 +133,14 @@ function populateDemoInfo(patientID) {
     })
 }
 
-// FUNCTION #3 of 4
+
 function optionChanged(patientID) {
     console.log(patientID);
     buildCharts(patientID);
     populateDemoInfo(patientID);
 }
 
-// FUNCTION #4 of 4
+
 function initDashboard() {
     var dropdown = d3.select("#selDataset")
     d3.json("samples.json").then(data => {

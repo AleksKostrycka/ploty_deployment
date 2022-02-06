@@ -72,7 +72,7 @@ function buildCharts(patientID) {
                 color: otu_ids,
               // Use sample_values for the marker size
                 size: sample_values,
-                colorscale: 'blues'
+                colorscale: 'BLUGRN'
             }
         }];
 

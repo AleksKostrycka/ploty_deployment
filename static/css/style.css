@@ -1,5 +1,9 @@
 .panel-default > .panel-heading-custom {
+<<<<<<< HEAD
     background: #4eb8d2; color: rgb(113, 129, 194);
+=======
+    background: ##4eb8d2; color: #fff;
+>>>>>>> refs/remotes/origin/main
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;

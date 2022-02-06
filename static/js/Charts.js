@@ -40,7 +40,7 @@ function buildCharts(patientID) {
             type: 'bar',
             orientation: 'h',
             marker: {
-                color: 'rgb(242, 113, 102)'
+                color: 'rgb(73, 77, 185)'
             },
         }]
 
@@ -72,7 +72,7 @@ function buildCharts(patientID) {
                 color: otu_ids,
               // Use sample_values for the marker size
                 size: sample_values,
-                colorscale: 'YlOrRd'
+                colorscale: 'blues'
             }
         }];
 
@@ -96,16 +96,16 @@ function buildCharts(patientID) {
             {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: washFreq,
-                title: { text: "Washing Frequency (Times per Week)" },
+                title: { text: "Belly Button Washing Frequency (Scrubs per Week)" },
                 type: "indicator",
                 mode: "gauge+number",
                 gauge: {
                     bar: {color: 'white'},
                     axis: { range: [null, 9] },
                     steps: [
-                        { range: [0, 3], color: 'rgb(253, 162, 73)' },
-                        { range: [3, 6], color: 'rgb(242, 113, 102)' },
-                        { range: [6, 9], color: 'rgb(166, 77, 104)' },
+                        { range: [0, 3], color: 'rgb(49, 191, 243)' },
+                        { range: [3, 6], color: 'rgb(42, 163, 206)' },
+                        { range: [6, 9], color: 'rgb(37, 141, 179)' },
                     ],
                   // threshold: {
                   //     line: { color: "white" },

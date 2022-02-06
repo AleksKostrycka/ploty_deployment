@@ -72,7 +72,7 @@ function buildCharts(patientID) {
                 color: otu_ids,
               // Use sample_values for the marker size
                 size: sample_values,
-                colorscale: 'BLUGRN'
+                colorscale: 'bluyl'
             }
         }];
 
@@ -96,7 +96,7 @@ function buildCharts(patientID) {
             {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: washFreq,
-                title: { text: "Belly Button Washing Frequency (Scrubs per Week)" },
+                title: { text: "Washing Frequency (Scrubs per Week)" },
                 type: "indicator",
                 mode: "gauge+number",
                 gauge: {
